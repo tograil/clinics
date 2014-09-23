@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "КЛИНИКА ДОКТОРА ";
+    ViewBag.Subtitle = "ЧЕРНЫШЕВОЙ";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title @ViewBag.Subtitle :: @ViewBag.PageName</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/Content/style.css">
+</head>
+<body>
+    <div id="container">
+
+        <div id="header">
+            <img style="float:right" src="~/Content/images/title_image.jpg" />
+            <h1>@ViewBag.Title&nbsp;<span>@ViewBag.Subtitle</span></h1>
+            <p>Разнообразие стоматологических услуг</p>
+
+            <div id="topmenu">
+                <ul>
+                    <li>@Html.ActionLink("О Нас", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Услуги", "Uslugi", "Home")</li>
+                    <li>@Html.ActionLink("Цены", "Price", "Home")</li>
+                    <li>@Html.ActionLink("Контакты", "Contacts", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    <div id="contentcontainer">
+        <div id="content" style="min-height:550px;">
+            @RenderBody()
+        </div>
+    </div>
+
+    </div>
+
+    <div id="footer">
+        <p>&copy; @DateTime.Now.Year - Андрей Рубайко</p>
+    </div>
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>

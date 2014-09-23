@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.PageName = "Цены";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>Цены на интересующие вас услуги вы всегда можете уточнить во время бесплатной консультации, или по телефону <b>(095) 772 - 23-72</b></p>
+
+<h3>Пародонтология</h3>
+
+<table class="price">
+    @foreach (Clinics2.Models.Service item in ViewBag.Par)
+    {
+        <tr>
+            <td style="width:50%">@item.Name</td>
+            <td style="width:40%">@item.Units</td>
+            <td style="width:10%">@item.Price</td>
+        </tr>
+    }
+</table>
+
+<h3>Терапия</h3>
+
+<table class="price">
+    @foreach (Clinics2.Models.Service item in ViewBag.Ter)
+    {
+        <tr>
+            <td style="width:50%">@item.Name</td>
+            <td style="width:40%">@item.Units</td>
+            <td style="width:10%">@item.Price</td>
+        </tr>
+    }
+</table>
+
+<h3>Ортопедия</h3>
+
+<table class="price">
+    @foreach (Clinics2.Models.Service item in ViewBag.Ort)
+    {
+        <tr>
+            <td style="width:50%">@item.Name</td>
+            <td style="width:40%">@item.Units</td>
+            <td style="width:10%">@item.Price</td>
+        </tr>
+    }
+</table>

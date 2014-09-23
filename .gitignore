@@ -1,0 +1,14 @@
+#ignore Windows thumbnails
+Thumbs.db
+#ignore Visual Studio and ReSharper files
+*.obj
+# ATTENTION! In the early history of the MagicOilBottles there were dlls checked in, so for a while they were NOT ignored... now they are...
+# if necessary for whatever reason to check them in again, comment the regex below...
+UpgradeLog*.*
+_UpgradeReport_Files/
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Tt]emp/
+_ReSharper*/
