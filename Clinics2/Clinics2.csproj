@@ -128,6 +128,8 @@
     <Content Include="Content\images\h2bg.gif" />
     <Content Include="Content\images\iconcom.gif" />
     <Content Include="Content\images\link.gif" />
+    <Content Include="Content\images\next.png" />
+    <Content Include="Content\images\prev.png" />
     <Content Include="Content\images\title_image.jpg" />
     <Content Include="Content\images\verhline.jpg" />
     <Content Include="Content\style.css" />
