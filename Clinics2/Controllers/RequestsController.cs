@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clinics2.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,7 +16,12 @@ namespace Clinics2.Controllers
 
             var files = Directory.GetFiles(filePath);
 
-            return Json(files.Select(file => new { src = string.Format("photos/gallery/{0}", Path.GetFileName(file)), desc = "image" }));
+            return Json(files.Select(file => new { src = string.Format("/photos/gallery/{0}", Path.GetFileName(file)), desc = "image" }));
+        }
+
+        public ActionResult GetServices(int type)
+        {
+            return Json(Service.Services.Where(service => (int)service.PriceType == type));
         }
 
     }

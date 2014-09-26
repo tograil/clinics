@@ -120,6 +120,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\gallery.css" />
     <Content Include="Content\images\bg.gif" />
     <Content Include="Content\images\bg1.gif" />
@@ -144,9 +145,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Photos\Gallery\DSC00105.JPG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Photos\Gallery\DSC00106.JPG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Photos\title.jpg" />
@@ -196,6 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\GoDaddy.pubxml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -3,26 +3,6 @@
     ViewBag.PageName = "О нас";
 }
 
-<div data-ng-controller="PhotoGallery">
-    <!-- slider container -->
-    <div class="container slider">
-
-        <!-- enumerate all photos -->
-        <img data-ng-repeat="photo in photos" class="slide" data-ng-swipe-right="showPrev()" data-ng-swipe-left="showNext()" data-ng-show="isActive($index)" data-ng-src="{{photo.src}}" />
-
-        <!-- prev / next controls -->
-        <a class="arrow prev" href="#" data-ng-click="showPrev()"></a>
-        <a class="arrow next" href="#" data-ng-click="showNext()"></a>
-
-        <!-- extra navigation controls -->
-        <ul class="nav">
-            <li data-ng-repeat="photo in photos" data-ng-class="{'active':isActive($index)}">
-                <img src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" data-ng-click="showPhoto($index);" />
-            </li>
-        </ul>
-    </div>
-</div>
-
 <p><img class="leftimg" src="~/Photos/title.png" />
     <p>Комфортное лечение зубов и сон в стоматологическом кресле - это реальность, если Вы клиент стоматологической клиники доктора Чернышевой. Добро пожаловать в мир элитной стоматологии Харькова!</p>
     <p>Ваша улыбка - это, прежде всего Ваше здоровье, а также уверенность в себе и отличное настроение. Состояние наших зубов не только указывает на уровень здоровья организма, но и влияет на наше поведение. От нашей способности улыбаться зависит то, как мы выглядим и как складывается наш день. Человек с белоснежной улыбкой - контактный, очаровательный и приятный собеседник, ему легко удается то, на что другим требуется много усилий. Улыбка - это показатель успеха.</p>

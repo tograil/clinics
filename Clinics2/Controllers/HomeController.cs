@@ -17,6 +17,11 @@ namespace Clinics2.Controllers
             return View();
         }
 
+        public ActionResult Gallery()
+        {
+            return View();
+        }
+
         public ActionResult Uslugi()
         {
             return View();
@@ -24,9 +29,9 @@ namespace Clinics2.Controllers
         
         public ActionResult Price()
         {
-            ViewBag.Par = Service.Par;
-            ViewBag.Ter = Service.Ter;
-            ViewBag.Ort = Service.Ort;
+            ViewBag.Par = Service.Services.Where(service => service.PriceType == PriceType.Paradontology);
+            ViewBag.Ter = Service.Services.Where(service => service.PriceType == PriceType.Terapy);
+            ViewBag.Ort = Service.Services.Where(service => service.PriceType == PriceType.Ortopia);
 
             return View();
         }

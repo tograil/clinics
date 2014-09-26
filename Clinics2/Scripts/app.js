@@ -6,14 +6,8 @@
     app.controller('PhotoGallery', ['$http','$scope', function ($http, $scope) {
         // Set of Photos
         $scope.photos = [];
-            /*{ src: 'http://farm9.staticflickr.com/8042/7918423710_e6dd168d7c_b.jpg', desc: 'Image 01' },
-            { src: 'http://farm9.staticflickr.com/8449/7918424278_4835c85e7a_b.jpg', desc: 'Image 02' },
-            { src: 'http://farm9.staticflickr.com/8457/7918424412_bb641455c7_b.jpg', desc: 'Image 03' },
-            { src: 'http://farm9.staticflickr.com/8179/7918424842_c79f7e345c_b.jpg', desc: 'Image 04' },
-            { src: 'http://farm9.staticflickr.com/8315/7918425138_b739f0df53_b.jpg', desc: 'Image 05' },
-            { src: 'http://farm9.staticflickr.com/8461/7918425364_fe6753aa75_b.jpg', desc: 'Image 06' }
-        ];*/
-        $http.post('Requests/GetGalleryImages').success(function (data) {
+            
+        $http.post('/Requests/GetGalleryImages').success(function (data) {
             $scope.photos = data;
         });
         // initial image index
@@ -39,4 +33,33 @@
             $scope._Index = index;
         };
     }]);
+
+    app.controller('Prices', ['$http', '$scope', function ($http, $scope) {
+        $scope.tab = 1;
+
+        $scope.therapy = [];
+        $scope.paradontology = [];
+        $scope.ortopia = [];
+
+        $http.post('/Requests/GetServices?type=1').success(function (data) {
+            $scope.therapy = data;
+        });
+
+        $http.post('/Requests/GetServices?type=2').success(function (data) {
+            $scope.paradontology = data;
+        });
+
+        $http.post('/Requests/GetServices?type=3').success(function (data) {
+            $scope.ortopia = data;
+        });
+
+        $scope.isActive = function (index) {
+            return $scope.tab === index;
+        };
+
+        $scope.showTab = function (index) {
+            $scope.tab = index;
+        };
+    }]);
+
 })();

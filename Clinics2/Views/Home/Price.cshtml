@@ -3,43 +3,36 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<p>Цены на интересующие вас услуги вы всегда можете уточнить во время бесплатной консультации, или по телефону <b>(095) 772 - 23-72</b></p>
+<p>Цены на интересующие услуги вы всегда можете уточнить во время бесплатной консультации, или по телефону <b>(095)772-23-72</b></p>
 
-<h3>Пародонтология</h3>
+<section data-ng-controller="Prices">
+    <ul class="nav nav-pills">
+        <li data-ng-class="{ active:isActive(1)}"><a href="#" data-ng-click="showTab(1)">Пародонтология</a></li>
+        <li data-ng-class="{ active:isActive(2)}"><a href="#" data-ng-click="showTab(2)">Терапия</a></li>
+        <li data-ng-class="{ active:isActive(3)}"><a href="#" data-ng-click="showTab(3)">Ортопедия</a></li>
+    </ul>
 
-<table class="price">
-    @foreach (Clinics2.Models.Service item in ViewBag.Par)
-    {
-        <tr>
-            <td style="width:50%">@item.Name</td>
-            <td style="width:40%">@item.Units</td>
-            <td style="width:10%">@item.Price</td>
+    <table class="price" data-ng-show="isActive(1)">
+        <tr data-ng-repeat="t in therapy">
+            <td style="width:55%">{{t.Name}}</td>
+            <td style="width:30%">{{t.Units}}</td>
+            <td style="width:15%">{{t.Price}}</td>
         </tr>
-    }
-</table>
+    </table>
 
-<h3>Терапия</h3>
-
-<table class="price">
-    @foreach (Clinics2.Models.Service item in ViewBag.Ter)
-    {
-        <tr>
-            <td style="width:50%">@item.Name</td>
-            <td style="width:40%">@item.Units</td>
-            <td style="width:10%">@item.Price</td>
+    <table class="price" data-ng-show="isActive(2)">
+        <tr data-ng-repeat="t in paradontology">
+            <td style="width:55%">{{t.Name}}</td>
+            <td style="width:30%">{{t.Units}}</td>
+            <td style="width:15%">{{t.Price}}</td>
         </tr>
-    }
-</table>
+    </table>
 
-<h3>Ортопедия</h3>
-
-<table class="price">
-    @foreach (Clinics2.Models.Service item in ViewBag.Ort)
-    {
-        <tr>
-            <td style="width:50%">@item.Name</td>
-            <td style="width:40%">@item.Units</td>
-            <td style="width:10%">@item.Price</td>
+    <table class="price" data-ng-show="isActive(3)">
+        <tr data-ng-repeat="t in ortopia">
+            <td style="width:55%">{{t.Name}}</td>
+            <td style="width:30%">{{t.Units}}</td>
+            <td style="width:15%">{{t.Price}}</td>
         </tr>
-    }
-</table>
+    </table>
+    </section>
